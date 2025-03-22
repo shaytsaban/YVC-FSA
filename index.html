@@ -6,97 +6,210 @@
     <title>ניתוח דוחות כספיים - ד"ר צבאן</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #ffecd2, #fcb69f);
-            color: #333;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            color: #333;
+            line-height: 1.6;
             direction: rtl;
             text-align: right;
         }
         header {
-            background: #ff7e5f;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
             color: #fff;
-            padding: 10px 0;
             text-align: center;
-            font-size: 2em;
+            padding: 2.5rem 1rem;
+            border-bottom: 8px solid #ffd700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 3px 3px 6px rgba(255, 215, 0, 0.7); }
+            100% { text-shadow: 3px 3px 10px rgba(255, 0, 204, 0.9); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         section {
-            padding: 20px;
-            margin: 20px;
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
             background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 3px solid #ffd700;
         }
         h2 {
-            font-size: 1.5em;
-            color: #ff7e5f;
+            color: #ff00cc;
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px dashed #3333ff;
+            padding-bottom: 0.5rem;
         }
-        .button {
+        h3 {
+            color: #3333ff;
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+        .gradient-btn {
             display: inline-block;
-            padding: 10px 20px;
-            margin: 10px 0;
-            font-size: 1em;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
             color: #fff;
-            background: #ff7e5f;
-            border: none;
-            border-radius: 5px;
             text-decoration: none;
+            border-radius: 30px;
+            background: linear-gradient(45deg, #ff6b6b, #ffcc00);
+            border: 2px solid #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 1rem 0;
+            font-weight: bold;
             text-align: center;
-            cursor: pointer;
         }
-        .button:hover {
-            background: #ff6b4a;
+        .gradient-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        .recording-btn {
+            padding: 1rem 1.5rem;
+            font-size: 1.1rem;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            width: 250px;
+            white-space: normal;
+            line-height: 1.4;
+            display: block;
+            margin: 0.5rem auto;
+        }
+        .recording-btn:hover {
+            background: linear-gradient(45deg, #1a252f, #2980b9);
+        }
+        .recordings-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        .video-wrapper {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .video-wrapper iframe {
+            border: 4px solid;
+            border-image: linear-gradient(135deg, #ff7e5f, #feb47b) 1;
+            border-radius: 15px;
+        }
+        .emoji {
+            font-size: 1.8rem;
+            margin: 0 0.5rem;
+        }
+        .note {
+            background: linear-gradient(135deg, #fff7e6, #fff);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 3px dashed #ff6b6b;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+            margin-top: 2rem;
+        }
+        b {
+            color: #3333ff;
+        }
+        footer {
+            background: linear-gradient(135deg, #feb47b, #ff7e5f);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <header>ניתוח דוחות כספיים - ד"ר צבאן 📊</header>
+    <header>
+        <h1>ניתוח דוחות כספיים - ד"ר צבאן 📊✨</h1>
+    </header>
     
     <section id="about-course">
-        <h2>על הקורס</h2>
-        <p>ברוכים הבאים לאתר הקורס הרשמי של ניתוח דוחות כספיים במתכונת א-סינכרונית. באתר זה תמצאו את כל מה שאתם צריכים כדי להפוך למנתחי דוחות. קבצי נתונים, סיכומים, תרגילים, פתרונות, מפגשים מוקלטים ומה לא. 📚🎓</p>
+        <h2>ברוכים הבאים לעולם הדוחות! 🎉</h2>
+        <p>שלום לכם, גיבורי הכספים! 💪 ברוכים הבאים לאתר הקורס הרשמי של <b>ניתוח דוחות כספיים</b> במתכונת א-סינכרונית – המקום שבו תהפכו למכונות ניתוח דוחות משומנות היטב! כאן תמצאו הכל: קבצי נתונים, סיכומים, תרגילים, פתרונות, מפגשים מוקלטים ועוד מלא הפתעות! 📚🎓 זה לא סתם קורס, זו הרפתקה שתיקח אתכם עמוק לתוך המספרים – והכל בקצב שלכם! 😎</p>
     </section>
     
     <section id="about-lecturer">
-        <h2>אודות המרצה</h2>
-        <p>כאן תכללו את קורות החיים המפורטים של המרצה ד"ר שי צבאן וניסיונו.</p>
+        <h2>מי זה הד"ר צבאן הזה? 👨‍🏫🌟</h2>
+        <p>ד"ר שי צבאן הוא לא סתם מרצה – הוא <b>אשף הכספים</b> שחי ונושם מספרים! 🎩 רואה חשבון מוסמך (CPA) בישראל, עם תואר ראשון בחשבונאות וכלכלה (בהצטיינות) מהאוניברסיטה הפתוחה, תואר MBA (גם בהצטיינות יתרה) מאותו מוסד, ותואר שני מאוניברסיטת בן-גוריון שבדק פערי שכר מגדריים בעולם העבודה – כן, הוא ממש רציני! 🎓 את הדוקטורט שלו הוא עשה באוניברסיטת אריאל, שם חקר את הכלכלה של האושר – כי מי אמר שכסף ואושר לא הולכים יחד? 😊</p>
+        <p>הוא מרצה בכיר במרכז האקדמי פרס, שם הוא מלמד חשבונאות, מימון, כלכלה התנהגותית וקבלת החלטות. ב-2016 הוא זכה בפרס "המרצה המעורר השראה" הארצי – כי הוא לא רק מלמד, הוא ממש מדליק את הסטודנטים! 🔥 יש לו ניסיון עשיר כיועץ פיננסי, והוא אפילו חבר בוועדת הבחינות של מועצת רואי החשבון במשרד המשפטים. בקיצור, הבנאדם הזה יודע דבר או שניים על כסף – וגם איך לעשות את זה כיף! 🎸</p>
     </section>
     
     <section id="how-to-study">
-        <h2>איך לומדים</h2>
-        <p>הלמידה בקורס מושתתת על צפייה מלאה בסרטונים, תרגילים לדוגמא וצפייה אדוקה במפגשים מסכמים לקראת סיום הסמסטר. 🎥📖</p>
+        <h2>איך שורדים את הקורס הזה? 🎯</h2>
+        <p>הלמידה כאן היא כמו מסע קסום – אתם צופים בסרטונים (בקצב שלכם, כמו נטפליקס!), מתרגלים דוגמאות עד שהראש מסתובב, ולקראת הסוף צוללים למפגשים מסכמים שיקשרו הכל יחד! 🎥📖 למה ככה? כי כסף לא נרדם, ואתם צריכים להיות חדים כמו חץ כדי לתפוס אותו! זה לא קורס של "שינון וגמרנו" – זה קורס שבונה לכם שפה חדשה, ואתם תדברו אותה שוטף עד סוף הסמסטר! 🌟</p>
     </section>
     
     <section id="course-requirements">
-        <h2>מה דרישות הקורס</h2>
-        <p>הציון בקורס מורכב מ-100% בחינה, אך ייתכן בונוס שמבוסס על מטלות הגשה לאורך הסמסטר. מטלות באיחור לא תזכנה בהתחשבות למעט בנסיבות מילואים. מועדי ההגשה ותכני ההגשה יפורסמו בהמשך ולא מראש. יש להיות ערוכים ללמידה שיטתית לאורך הסמסטר ללא תלות בהגשות או היעדרן. 📝</p>
+        <h2>מה צריך לעשות? 📋</h2>
+        <p>הציון שלכם? 100% בחינה – כן, הכל תלוי ביום הגדול! 🎭 אבל יש סיכוי לבונוס קטן ממטלות לאורך הסמסטר – כמו אוצר קטן שצריך לחטוף! 🏴‍☠️ מטלות באיחור? לא יתקבלו, אלא אם אתם במילואים (ואז אתם גיבורים בכל מקרה!). מועדים ותכנים יפורסמו בהפתעה – אז תהיו מוכנים לכל תרחיש! למה? כי החיים הם הפתעה, והקורס הזה מלמד אתכם לרקוד עם הבלגן! 💃</p>
     </section>
     
     <section id="exam-structure">
-        <h2>איך בנויה הבחינה</h2>
-        <p>הבחינה מורכבת מ-20 שאלות רב-ברירה ללא בדיקת דרך. הבחינה מכסה נושאים של ניתוח דוחות כספיים, הערכת שווי ופרשנות מידע כספי. הבחינה מאפשרת שימוש בכל חומר עזר כתוב, אך מאתגרת. יש ללמוד כל הסמסטר כדי להטמיע את השפה. 📝📊</p>
+        <h2>מה קורה בבחינה? 🎲</h2>
+        <p>הבחינה היא כמו חידון טלוויזיה: 20 שאלות רב-ברירה, בלי בדיקת דרך – פשוט תסמנו ותקוו לטוב! 😂 היא מכסה ניתוח דוחות כספיים, הערכת שווי ופרשנות מידע כספי – כל מה שראיתם בסרטונים ובתרגילים. מותר להביא כל חומר עזר כתוב (ספרים, מחברות, הכל!), אבל אל תטעו – היא מאתגרת! למה? כי אנחנו רוצים שתחשבו, לא סתם תעתיקו! 🧠 למידה שיטתית כל הסמסטר תהפוך אתכם למאסטרים של השפה הזו! 📊</p>
     </section>
     
     <section id="course-notebook">
-        <h2>מחברת הקורס</h2>
-        <p>לחצו כאן להוריד את מחברת הקורס</p>
-        <a href="#" class="button">הורדת מחברת הקורס</a>
+        <h2>מחברת הקורס – האוצר שלכם! 💰</h2>
+        <p>רוצים את כל הסודות של הקורס במקום אחד? המחברת הזו מחולקת לגליונות – כל גיליון מתאים להרצאה אחרת, מסומן לפי מספר ההרצאה, כדי שתמיד תדעו איפה אתם! 🗂️ והנה הקסם: היא <b>מתעדכנת אוטומטית</b> עם כל הרצאה חדשה שמועלית – וזה קורה בכל יום א', כמו מתנה שבועית! 🎁 לחצו למטה ותתחילו לאסוף את האוצר! 🗺️</p>
+        <div style="text-align: center;">
+            <a href="FSA - New Course - Course Notes.xlsx" class="gradient-btn">הורד את מחברת הקורס! 🚀</a>
+        </div>
     </section>
     
     <section id="course-recordings">
-        <h2>הקלטות הקורס</h2>
-        <p>כאן תוכלו לצפות בכל הקלטות הקורס</p>
-        <p>המשך יבוא... 📹</p>
+        <h2>הקלטות הקורס – הקולנוע שלנו! 🎥</h2>
+        <p>צללו לסדרה הכי ממכרת של ניתוח דוחות – כל ההקלטות מחכות לכם כאן! 👑 בחרו כפתור ותתחילו להפוך למלכי הכספים, הרצאה אחרי הרצאה! 📹</p>
+        <div class="recordings-container">
+            <a href="#" class="gradient-btn recording-btn">1 - מבוא לקורס ודוחות כספיים</a>
+            <a href="#" class="gradient-btn recording-btn">2 - ניתוח אופקי ואנכי ומשמעותו</a>
+            <a href="#" class="gradient-btn recording-btn">3 - ניתוח יחסים פיננסיים</a>
+            <a href="chapter1.html" class="gradient-btn recording-btn">4 - מבוא להערכת שווי חברות</a>
+            <a href="#" class="gradient-btn recording-btn">5 - סיכום וחזרה</a>
+        </div>
+        
+        <h3>מילה מהמרצה שלכם 🎤</h3>
+        <div class="video-wrapper">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/cqI3dkzf7Tc" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </section>
     
-    <footer style="text-align: center; padding: 20px; background: #ff7e5f; color: #fff;">
-        <p>📧 פניות ויצירת קשר: <a href="mailto:shay.tsaban@gmail.com" style="color: #fff; text-decoration: underline;">shay.tsaban@gmail.com</a></p>
+    <footer>
+        <p>📧 פניות ויצירת קשר: <a href="mailto:shay.tsaban@gmail.com">shay.tsaban@gmail.com</a> – תכתבו לי, אני לא נושך! 😄</p>
     </footer>
     
     <script>
-        // JavaScript for any additional functionality can be added here
+        window.onload = function() {
+            const header = document.querySelector('header h1');
+            header.style.opacity = 0;
+            header.style.transform = 'translateY(-20px)';
+            setTimeout(() => {
+                header.style.transition = 'all 0.8s ease-out';
+                header.style.opacity = 1;
+                header.style.transform = 'translateY(0)';
+            }, 100);
+        };
     </script>
 </body>
 </html>
