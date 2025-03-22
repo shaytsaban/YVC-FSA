@@ -1,1 +1,117 @@
-1
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 - מבוא לקורס ודוחות כספיים</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            color: #333;
+            line-height: 1.6;
+            direction: rtl;
+            text-align: right;
+        }
+        header {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            color: #fff;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-bottom: 8px solid #ffd700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+        header h1 {
+            font-size: 2.8rem;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            animation: glow 2s infinite alternate;
+        }
+        @keyframes glow {
+            0% { text-shadow: 3px 3px 6px rgba(255, 215, 0, 0.7); }
+            100% { text-shadow: 3px 3px 10px rgba(255, 0, 204, 0.9); }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        section {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            border: 3px solid #ffd700;
+        }
+        h2 {
+            color: #ff00cc;
+            font-size: 1.9rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px dashed #3333ff;
+            padding-bottom: 0.5rem;
+        }
+        p {
+            font-size: 1.1rem;
+        }
+        a {
+            color: #3333ff;
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #ff6b6b;
+        }
+        .emoji {
+            font-size: 1.8rem;
+            margin: 0 0.5rem;
+        }
+        b {
+            color: #3333ff;
+        }
+        footer {
+            background: linear-gradient(135deg, #feb47b, #ff7e5f);
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>1 - מבוא לקורס ודוחות כספיים 📊✨</h1>
+    </header>
+    
+    <section>
+        <h2>מה נלמד כאן? 🎓</h2>
+        <p>בפרק זה נלמד על הדוחות הכספיים המרכזיים - דוח רווח והפסד והדוח על המצב הכספי וחשיבותם לקבלת החלטות. ההרצאות תחולקנה למקטעים קצרים לנוחות הלמידה <span class="emoji">⏳</span>. כל הסיכומים של ההרצאות ייכללו בקובץ האקסל ב<b><a href="index.html">דף הבית של אתר הקורס</a></b> <span class="emoji">📝</span>.</p>
+        <p><b>ההקלטות בעיבוד - stay tuned</b> <span class="emoji">🎥</span></p>
+    </section>
+    
+    <footer>
+        <p>📧 פניות ויצירת קשר: <a href="mailto:shay.tsaban@gmail.com">shay.tsaban@gmail.com</a> – תכתבו לי, אני לא נושך! 😄</p>
+    </footer>
+    
+    <script>
+        window.onload = function() {
+            const header = document.querySelector('header h1');
+            header.style.opacity = 0;
+            header.style.transform = 'translateY(-20px)';
+            setTimeout(() => {
+                header.style.transition = 'all 0.8s ease-out';
+                header.style.opacity = 1;
+                header.style.transform = 'translateY(0)';
+            }, 100);
+        };
+    </script>
+</body>
+</html>
